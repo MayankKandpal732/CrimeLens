@@ -1,0 +1,23 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# LLM Configuration - Ollama
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:1b")
+
+# Database Configuration - SQLite (same as frontend)
+DATABASE_PATH = os.getenv("DATABASE_PATH", "../../crime_lens/data/crime_lens.db")
+
+# Vector Database Configuration
+QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+QDRANT_COLLECTION = "issues"
+
+# API Keys
+NEWS_API_KEY = os.getenv("NEWS_API_KEY", "")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "")
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "")
+
+# Embeddings
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
